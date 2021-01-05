@@ -1,88 +1,44 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      .item {
-        text-align: center;
-      }
+ <head>
+   <title>Timezone Widget</title>
+   <link rel="stylesheet" type="text/css" href="..\notion_code\timezone.css">
+ </head>
+ <body>
+  <div class="container">
+  <div class="row">
+    <div id="cal" class="mx-auto">
+      <h1>&nbsp;</h1>
+    </div>
+  </div>
 
-      #cal h1 {
-        font-size: 3.5rem;
-        font-weight: 100;
-
-      }
-
-      .city {
-        font-size: 2.8rem;
-        font-weight: 300;
-        color: steelblue;
-      }
-
-      .time {
-        font-size: 4rem;
-        font-weight: 100;
-        margin-top:1rem;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-
-    <div class="row">
-      <div id="cal" class="mx-auto">
-        <h1>&nbsp;</h1>
-      </div>
+  <div class="row mt-4">
+    <div id="YYC" class="col item">
+      <h2 class="city">YYC</h2>
+      <h1 class="time">&nbsp;</h1>
     </div>
 
-    <div class="row mt-4">
-      <div id="YYC" class="col item">
-        <h2 class="city">YYC</h2>
-        <h1 class="time">&nbsp;</h1>
-      </div>
-
-      <div id="SEA" class="col item">
-        <h2 class="city">SEA</h2>
-        <h1 class="time">&nbsp;</h1>
-      </div>
-
-      <div id="NYC" class="col item">
-        <h2 class="city">NYC</h2>
-        <h1 class="time">&nbsp;</h1>
-      </div>
-
-      <div id="LON" class="col item">
-        <h2 class="city">LON</h2>  
-        <h1 class="time">&nbsp;</h1>
-      </div>
-
-      <div id="MEL" class="col item">
-        <h2 class="city">MEL</h2>  
-        <h1 class="time">&nbsp;</h1>
-      </div>
+    <div id="SEA" class="col item">
+      <h2 class="city">SEA</h2>
+      <h1 class="time">&nbsp;</h1>
     </div>
-  </container>
+
+    <div id="NYC" class="col item">
+      <h2 class="city">NYC</h2>
+      <h1 class="time">&nbsp;</h1>
+    </div>
+
+    <div id="LON" class="col item">
+      <h2 class="city">LON</h2>  
+      <h1 class="time">&nbsp;</h1>
+    </div>
+
+    <div id="MEL" class="col item">
+      <h2 class="city">MEL</h2>  
+      <h1 class="time">&nbsp;</h1>
+    </div>
+    </div>
+    </container>
+   <script src="..\notion_code\timezone.js"></script>
   </body>
-  <script>
-    var DateTime = luxon.DateTime;
-    var now = DateTime.local();
-
-    var timeYYC = now.setZone('America/Edmonton').toLocaleString(DateTime.TIME_24_SIMPLE);
-
-    var timeSEA = now.setZone('America/Los_Angeles').toLocaleString(DateTime.TIME_24_SIMPLE);
-
-    var timeNYC = now.setZone('America/New_York').toLocaleString(DateTime.TIME_24_SIMPLE);
-
-    var timeLON = now.setZone('Europe/London').toLocaleString(DateTime.TIME_24_SIMPLE);
-
-    var timeMEL = now.setZone('Australia/Melbourne').toLocaleString(DateTime.TIME_24_SIMPLE);
-
-    var nowDate = now.setLocale('en').toLocaleString(DateTime.DATE_HUGE);
-
-    $('#cal h1').html(nowDate);
-
-    $('#YYC h1').html(timeYYC);
-    $('#SEA h1').html(timeSEA);
-    $('#NYC h1').html(timeNYC);
-    $('#LON h1').html(timeLON);
-    $('#MEL h1').html(timeMEL);
-  </script>
 </html>
